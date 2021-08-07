@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-rest-students
+  labels:
+    app: spring-rest-students
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: spring-rest-students
+      labels:
+        app: spring-rest-students
+    spec:
+      containers:
+        - name: spring-rest-students
+          image: harilearning1989/spring-rest-students:3
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: spring-rest-students
