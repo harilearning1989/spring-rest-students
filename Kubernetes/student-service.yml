@@ -3,11 +3,11 @@ kind: Service
 metadata:
   name: spring-rest-students
 spec:
-  selector:
-    app: spring-rest-students
   ports:
-    - port: 8083
+    - name: spring-rest-students
+      port: 8083
       protocol: TCP
       targetPort: 8083
-  type: NodePort
-#type: ClusterIP
+  selector:
+    app: spring-rest-students
+  type: ClusterIP
