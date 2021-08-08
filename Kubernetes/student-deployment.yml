@@ -1,6 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  namespace: spring-boot-examples
   name: spring-rest-students
   labels:
     app: spring-rest-students
